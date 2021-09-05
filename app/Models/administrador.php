@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class administrador extends Model
 {
     use HasFactory;
+
+
+//relacion uno a muchos
+public function inscripcion(){
+    return $this->hasMany('App\Models\inscripcion');
+}
+
 }
