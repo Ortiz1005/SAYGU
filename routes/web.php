@@ -5,7 +5,16 @@ use App\Http\Controllers\administradorcontroller;
 use App\Http\Controllers\alumnocontroller;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\profesorcontroller;
-
+use App\Http\Controllers\aulacontroller;
+use App\Http\Controllers\calificacioncontroller;
+use App\Http\Controllers\carreraController;
+use App\Http\Controllers\grupocontroller;
+use App\Http\Controllers\horarioalumnocontroller;
+use App\Http\Controllers\horarioprofesorcontroller;
+use App\Http\Controllers\inscripcionController;
+use App\Http\Controllers\materiacontroller;
+use App\Http\Controllers\pagoscontroller;
+use App\Http\Controllers\semestrecontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,11 +31,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
-
 Route::resource('user', UserController::class);
 Route::resource('administrador', administradorController::class);
 Route::resource('alumno', alumnoController::class);
 Route::resource('profesor', profesorController::class);
+Route::resource('aula', aulaController::class);
+Route::resource('calificacion', calificacionController::class);
+Route::resource('carrera', carreraController::class);
+Route::resource('grupo', grupoController::class);
+Route::resource('horarioalumno', horarioalumnoController::class);
+Route::resource('horarioprofesor', horarioprofesorController::class);
+Route::resource('inscripcion', inscripcionController::class);
+Route::resource('materia', materiaController::class);
+Route::resource('pagos', pagosController::class);
+Route::resource('semestre', semestreController::class);
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
